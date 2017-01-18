@@ -7,7 +7,7 @@ app.config(($routeProvider, $locationProvider) => {
   $routeProvider
     .when("/", {
       controller : "BookCtrl",
-      templateUrl: "app/partials/firstpartial.html",
+      templateUrl: "app/partials/guidepartial.html",
     })
     .otherwise({
       redirectTo: "/"
