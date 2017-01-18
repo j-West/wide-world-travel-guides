@@ -1,11 +1,11 @@
-app.controller("BookCtrl", function($scope, $http) {
+app.controller("BookCtrl", function($scope, $http, GuideFactory) {
   console.log("BookCtrl")
 
-  $http.get(`../../data/guides.json`)
-       .then(function(val){
-         console.log(val.data);
-         $scope.guides = val.data.guides;
-         //$scope.list.push("another thing!")
-       })
+GuideFactory.getGuides().then(function (data) {
+  $scope.guides = data;
+  console.log(data.data.guides);
+  })
+
+
 
 });
